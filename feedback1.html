@@ -1,0 +1,90 @@
+<head>
+    <link rel="stylesheet" href= 
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+    <h1>Feedback Form</h1>
+<form id="fd_form"  method="POST">
+    <div class="form-box"> 
+    <!-- Replace with your Access Key -->
+    <input type="hidden" name="access_key" value="d3430c63-5535-461b-9dae-dc9cbd8451b5">
+
+    <!-- Form Inputs. Each input must have a name="" attribute -->
+    <label> 
+        <i class="fa fa-solid fa-user"></i> 
+        Name
+    </label>
+    <input type="text" name="name" required><br><br>
+    <label> 
+        <i class="fa fa-solid fa-envelope"></i> 
+        Email Address
+    </label>
+    <input type="email" name="email" required><br><br>
+    <label> 
+        <i class="fa-solid fa-face-smile"></i> 
+        Do you satisfy with our service? 
+    </label> 
+    <div class="radio-group"> 
+        <input type="radio" id="yes"
+            name="satisfy" value="yes"> 
+        <label for="yes">Yes</label> 
+
+        <input type="radio" id="no"
+            name="satisfy" value="no"> 
+        <label for="no">No</label> 
+    </div> 
+    <label> 
+        <i class="fa-solid fa-comments"></i> 
+        Write your Suggestions: 
+    </label>
+    <textarea name="message" required></textarea><br><br>
+    <input class="submit" type="submit" value="Submit form"/><br>
+</div>
+</form>
+
+
+<script>
+
+    let fd_form=document.getElementById("fd_form");
+
+    fd_form.addEventListener('submit', function(e) {
+
+        e.preventDefault();
+
+    const formData = new FormData(fd_form);
+   
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    alert("Message Sent Successfully!!");
+
+    fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+                // alert("Form Submitted Successfully!!")
+                
+            } else {
+                // alert("Something went wrong!!")
+            }
+        })
+        .catch(error => {
+            console.log(error);
+            alert("Something went wrong!!")
+        })
+        .then(function() {
+            fd_form.reset();
+        });
+});
+</script>
+
+</body>

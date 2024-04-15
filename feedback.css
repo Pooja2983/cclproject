@@ -1,0 +1,88 @@
+/*style.css */
+@import url( 
+'https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
+
+body { 
+	margin: 0; 
+	display: flex; 
+	align-items: center; 
+	justify-content: space-around; 
+	flex-direction: column; 
+	height: 100vh; 
+	background-color:white; 
+	font-family: 'Poppins', sans-serif; 
+
+} 
+
+i { 
+	margin-right: 3px; 
+} 
+
+.form-box { 
+	background-color: rgb(252, 211, 211); 
+	box-shadow: 0 0 10px #e3d3d3a9; 
+	padding: 40px; 
+	border-radius: 15px; 
+	width: 400px;
+	height: 500px; 
+	margin-top: -50px;
+	
+} 
+
+form { 
+	max-width: 400px; 
+	margin: 0 auto; 
+} 
+
+.radio-group { 
+	display: flex; 
+	margin-bottom: 16px; 
+	position: relative;
+	left: -30px;
+	padding: 10px;
+} 
+
+input[type="radio"] { 
+	margin-right: 5px; 
+} 
+
+label { 
+	display: block; 
+	margin-bottom: 8px; 
+	font-size: 17px; 
+	color: black; 
+	font-weight: 600; 
+} 
+
+input, 
+textarea { 
+	width: 100%; 
+	padding: 8px; 
+	margin-bottom: 12px; 
+	box-sizing: border-box; 
+	border-radius: 10px; 
+
+} 
+
+.submit { 
+	background-color: rgb(56, 50, 50); 
+	color: white; 
+	padding: 10px; 
+	border: none; 
+	border-radius: 25px; 
+	cursor: pointer; 
+	width: 100%; 
+	font-size: 15px; 
+	transition: .2s linear; 
+} 
+
+.submit:hover { 
+	background-color: #1c1665; 
+	border: none; 
+	transform: translateY(-10px); 
+} 
+
+h1 { 
+	color: black;
+	margin-left: 100px;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insertion Sort Visualization</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        display: flex;
+        align-items: flex-end;
+        width: 80%;
+        margin: 50px auto;
+        height: 400px;
+    }
+    .bar {
+        background-color: dodgerblue;
+        margin: 0 2px;
+    }
+</style>
+</head>
+<body>
+<h1>Insertion Sort Visualization</h1>
+<div class="container" id="container"></div>
+<button onclick="startSorting()">Sort</button>
+
+<script>
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function startSorting() {
+    const container = document.getElementById('container');
+    const array = generateRandomArray(20); // Change the number of elements here
+    renderArray(container, array);
+
+    for (let i = 1; i < array.length; i++) {
+        let currentValue = array[i];
+        let j = i - 1;
+
+        while (j >= 0 && array[j] > currentValue) {
+            array[j + 1] = array[j];
+            renderArray(container, array);
+            await sleep(200); // Adjust the speed of animation (in milliseconds)
+            j--;
+        }
+        array[j + 1] = currentValue;
+        renderArray(container, array);
+        await sleep(200); // Adjust the speed of animation (in milliseconds)
+    }
+}
+
+function generateRandomArray(size) {
+    const array = [];
+    for (let i = 0; i < size; i++) {
+        array.push(Math.floor(Math.random() * 100) + 1); // Random numbers between 1 and 100
+    }
+    return array;
+}
+
+function renderArray(container, array) {
+    container.innerHTML = '';
+    array.forEach(element => {
+        const bar = document.createElement('div');
+        bar.classList.add('bar');
+        bar.style.height = `${element * 4}px`; // Adjust the height scaling factor as needed
+        container.appendChild(bar);
+    });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="binary.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Binary Tree</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+         <img class="logo" src="image/finaldsa.png" alt="">
+          <div>
+            <a href="#" class="home">Home</a>
+            <a href="aboutus.html" class="home">About Us</a>
+            <a href="feedback1.html" class="home">Feedback</a>
+          </div>
+           
+        </nav>
+    
+</header>
+    <div class="container">
+        <h1>Binary Tree Visualization</h1>
+        <div class="findContainer"></div>
+        <textarea oninput="action()" type="number" placeholder='Enter an array which is separated with space. The root is first element.
+Ex: 5 9 1 3 7' id="inp" cols="30" rows="10"></textarea>
+        <div class="btn-container">
+            <button class="btn-clear" onclick="clearAndCreate()">Clear</button>
+            <button class="btn" disabled onclick="toggleLock()">Lock</button>
+        </div>
+
+        <div class="box graph" id="tree"></div>
+
+    </div>
+
+    <a href="https://github.com/saliherdemk/Binary-Tree-Visualization" target="blank">
+        <img src="media/githubLogo.png" alt="" id="github" style="position: absolute;right:0px">
+    </a>
+
+    <footer>
+        <nav class="navbar1">
+            <a href="#" class="home">Home</a>
+            <a href="aboutus.html" class="home">About Us</a>
+            <a href="feedback1.html" class="home">Feedback</a>
+        </nav>
+        <nav class="navbar2">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-github"></i></a>
+        </nav>
+        <p class="copy">Copyrights DSA Visualizer@2024</p>
+      </footer>
+
+</body>
+<script src="js/index.js"></script>
+<script src="js/binary.js"></script>
+<script src="js/draw.js"></script>
+<script src="js/d3js.js"></script>
+
+</html>

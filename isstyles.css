@@ -1,0 +1,12 @@
+#bars {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 80vh;
+}
+
+.bar {
+  width: 20px;
+  margin: 0 1px;
+  background-color: #3498db;
+}
